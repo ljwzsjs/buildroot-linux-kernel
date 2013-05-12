@@ -188,7 +188,7 @@ static int kp_mouse_event(struct input_dev *dev, unsigned int scancode, unsigned
 
 void kp_send_key(struct input_dev *dev, unsigned int scancode, unsigned int type)
 {
-    if(scancode == FN_KEY_SCANCODE && type == 1)
+    /*if(scancode == FN_KEY_SCANCODE && type == 1)
     {
         // switch from key to pointer
         if(key_pointer_switch)
@@ -220,7 +220,7 @@ void kp_send_key(struct input_dev *dev, unsigned int scancode, unsigned int type
         input_sync(dev);
 
         return;
-    } 
+    } */
 
     if(kp_mouse_event(dev, scancode, type)){
         if(scancode > ARRAY_SIZE(key_map)){
